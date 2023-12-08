@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useRouter } from "next/navigation";
 import type { Conversation, Message, User } from "@prisma/client";
 import { format } from "date-fns";
@@ -23,6 +23,8 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
   const otherUser = useOtherUser(data);
   const session = useSession();
   const router = useRouter();
+
+  const conversationRef = useRef<HTMLDivElement | null>(null);
 
   const handleClick = useCallback(() => {
     router.push(`/conversations/${data.id}`);
@@ -56,8 +58,26 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
     return "Started a conversation";
   }, [lastMessage]);
 
+  useEffect(() => {
+    conversationRef.current?.addEventListener("keydown", (e) => {
+      if (e.key === " " || e.key === "Enter" || e.key === "Spacebar") {
+        handleClick();
+      }
+    });
+
+    return conversationRef.current?.removeEventListener("keydown", (e) => {
+      if (e.key === " " || e.key === "Enter" || e.key === "Spacebar") {
+        handleClick();
+      }
+    });
+  }, [conversationRef, handleClick]);
+
   return (
     <div
+      ref={conversationRef}
+      role="button"
+      aria-pressed={false}
+      tabIndex={0}
       onClick={handleClick}
       className={clsx(
         "w-full relative flex items-center space-x-3 hover:bg-neutral-100 rounded-lg transition cursor-pointer p-3",

@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import axios from "axios";
 import type { FieldValues, SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 
 import Input from "@/app/components/inputs/input";
@@ -37,7 +38,10 @@ const AuthForm = () => {
     setIsLoading(true);
 
     if (variant === "REGISTER") {
-      axios.post("/api/register", data);
+      axios
+        .post("/api/register", data)
+        .catch(() => toast.error("Something went wrong."))
+        .finally(() => setIsLoading(false));
     }
 
     if (variant === "LOGIN") {

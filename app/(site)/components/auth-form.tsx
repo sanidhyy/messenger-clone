@@ -10,6 +10,7 @@ import { BsGithub, BsGoogle } from "react-icons/bs";
 import Input from "@/app/components/inputs/input";
 import Button from "@/app/components/button";
 import AuthSocialButton from "./auth-social-button";
+import { signIn } from "next-auth/react";
 
 type Variant = "LOGIN" | "REGISTER";
 
@@ -45,7 +46,20 @@ const AuthForm = () => {
     }
 
     if (variant === "LOGIN") {
-      // NextAuth Sign in
+      signIn("credentials", {
+        ...data,
+        redirect: false,
+      })
+        .then((callback) => {
+          if (callback?.error) {
+            toast.error("Invalid credentials.");
+          }
+
+          if (callback?.ok && !callback?.error) {
+            toast.success("You are logged in.");
+          }
+        })
+        .finally(() => setIsLoading(false));
     }
   };
 

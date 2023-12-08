@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import axios from "axios";
 import type { FieldValues, SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { BsGithub, BsGoogle } from "react-icons/bs";
@@ -36,7 +37,7 @@ const AuthForm = () => {
     setIsLoading(true);
 
     if (variant === "REGISTER") {
-      // Axios Register Request
+      axios.post("/api/register", data);
     }
 
     if (variant === "LOGIN") {

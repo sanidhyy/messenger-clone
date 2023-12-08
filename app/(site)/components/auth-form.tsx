@@ -63,10 +63,19 @@ const AuthForm = () => {
     }
   };
 
-  const socialAction = (action: string) => {
+  const socialAction = (action: "github" | "google") => {
     setIsLoading(true);
 
-    // NexAuth Social Sign in
+    signIn(action, {
+      redirect: false,
+    })
+      .then((callback) => {
+        if (callback?.error) toast.error("Invalid credentials.");
+
+        if (callback?.ok && !callback?.error)
+          toast.success("You are logged in.");
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (

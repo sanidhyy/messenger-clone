@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Messenger Clone",
-  description: "A Real-Time Messenger Clone using Next.js 14",
+  description: "A Real-Time Messenger Clone using Next.js 14.",
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {

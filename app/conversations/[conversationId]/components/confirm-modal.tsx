@@ -8,7 +8,7 @@ import { Dialog } from "@headlessui/react";
 import { FiAlertTriangle } from "react-icons/fi";
 
 import useConversation from "@/app/hooks/use-conversation";
-import Modal from "@/app/components/modal";
+import Modal from "@/app/components/modals/modal";
 import Button from "@/app/components/button";
 
 type ConfirmModalProps = {

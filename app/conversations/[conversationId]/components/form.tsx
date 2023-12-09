@@ -51,6 +51,7 @@ const Form = () => {
       <CldUploadButton
         options={{
           maxFiles: 1,
+          maxFileSize: 4000000, // 4 mb
         }}
         onUpload={handleUpload}
         uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_PRESET}

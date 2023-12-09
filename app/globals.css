@@ -7,3 +7,17 @@ body,
 :root {
   height: 100%;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #efefef;
+  border-radius: 8px;
+}

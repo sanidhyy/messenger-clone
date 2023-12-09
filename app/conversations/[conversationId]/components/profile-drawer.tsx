@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useMemo } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { format } from "date-fns";
 import { Dialog, Transition } from "@headlessui/react";
 import type { Conversation, User } from "@prisma/client";
@@ -8,6 +8,7 @@ import { IoClose, IoTrash } from "react-icons/io5";
 
 import useOtherUser from "@/app/hooks/use-other-user";
 import Avatar from "@/app/components/avatar";
+import ConfirmModal from "./confirm-modal";
 
 type ProfileDrawerProps = {
   isOpen: boolean;
@@ -23,6 +24,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
   data,
 }) => {
   const otherUser = useOtherUser(data);
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
   const joinedDate = useMemo(() => {
     return format(new Date(otherUser.createdAt), "PP");
@@ -41,7 +43,11 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
   }, [data]);
 
   return (
-    <div>
+    <>
+      <ConfirmModal
+        isOpen={confirmOpen}
+        onClose={() => setConfirmOpen(false)}
+      />
       <Transition.Root show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50" onClose={onClose}>
           <Transition.Child
@@ -97,7 +103,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 
                           <div className="flex gap-10 my-8">
                             <button
-                              onClick={() => {}}
+                              onClick={() => setConfirmOpen(true)}
                               className="flex flex-col gap-3 items-center rounded-md cursor-pointer hover:opacity-75 focus:outline-none focus:ring-2 focus:ring-sky-400"
                             >
                               <div
@@ -152,7 +158,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
           </div>
         </Dialog>
       </Transition.Root>
-    </div>
+    </>
   );
 };
 

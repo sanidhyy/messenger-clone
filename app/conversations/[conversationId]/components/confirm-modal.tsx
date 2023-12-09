@@ -18,7 +18,7 @@ type ConfirmModalProps = {
 
 const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen, onClose }) => {
   const router = useRouter();
-  const conversationId = useConversation();
+  const { conversationId } = useConversation();
   const [isLoading, setIsLoading] = useState(false);
 
   const onDelete = useCallback(() => {

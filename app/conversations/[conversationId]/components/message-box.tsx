@@ -1,12 +1,12 @@
 "use client";
 
 import clsx from "clsx";
+import Image from "next/image";
+import { format } from "date-fns";
 import { useSession } from "next-auth/react";
 
 import type { FullMessageType } from "@/app/types";
 import Avatar from "@/app/components/avatar";
-import { format } from "date-fns";
-import Image from "next/image";
 
 type MessageBoxProps = {
   data: FullMessageType;
@@ -40,10 +40,14 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
 
       <div className={body}>
         <div className="flex items-center gap-1">
-          <h3 className="text-sm text-gray-500">{data.sender.name}</h3>
-          <h3 className="text-xs text-gray-400">
+          <p className="text-sm text-gray-500">{data.sender.name}</p>
+          <time
+            dateTime={format(new Date(data.createdAt), "p")}
+            className="text-xs text-gray-400"
+            suppressHydrationWarning
+          >
             {format(new Date(data.createdAt), "p")}
-          </h3>
+          </time>
         </div>
 
         <div className={message}>
@@ -56,14 +60,14 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
               className="object-cover cursor-pointer hover:scale-110 transition translate"
             />
           ) : (
-            <div>{data.body}</div>
+            <p>{data.body}</p>
           )}
         </div>
 
         {isLast && isOwn && seenList.length > 0 && (
-          <div className="text-xs font-light text-gray-500">
+          <span className="text-xs font-light text-gray-500">
             {`Seen by ${seenList}`}
-          </div>
+          </span>
         )}
       </div>
     </div>

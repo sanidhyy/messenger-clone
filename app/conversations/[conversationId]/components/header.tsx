@@ -6,6 +6,7 @@ import type { Conversation, User } from "@prisma/client";
 import { HiChevronLeft, HiEllipsisHorizontal } from "react-icons/hi2";
 
 import useOtherUser from "@/app/hooks/use-other-user";
+import useActiveList from "@/app/hooks/use-active-list";
 import AvatarGroup from "@/app/components/avatar-group";
 import Avatar from "@/app/components/avatar";
 import ProfileDrawer from "./profile-drawer";
@@ -19,12 +20,14 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = ({ conversation }) => {
   const otherUser = useOtherUser(conversation);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const { members } = useActiveList();
+  const isActive = members.indexOf(otherUser?.email!) !== -1;
 
   const statusText = useMemo(() => {
     if (conversation.isGroup) return `${conversation.users.length} members`;
 
-    return `Online`;
-  }, [conversation]);
+    return isActive ? "Online" : "Offline";
+  }, [conversation, isActive]);
 
   return (
     <>

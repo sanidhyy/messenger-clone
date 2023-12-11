@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 import { Inter } from "next/font/google";
 
+import ActiveStatus from "@/app/components/active-status";
 import ToasterContext from "@/app/context/toaster-context";
 import AuthContext from "@/app/context/auth-context";
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
             <ToasterContext />
           </aside>
 
+          <ActiveStatus />
           {children}
         </AuthContext>
       </body>

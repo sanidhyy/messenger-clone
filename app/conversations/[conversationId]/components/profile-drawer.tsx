@@ -7,6 +7,7 @@ import type { Conversation, User } from "@prisma/client";
 import { IoClose, IoTrash } from "react-icons/io5";
 
 import useOtherUser from "@/app/hooks/use-other-user";
+import AvatarGroup from "@/app/components/avatar-group";
 import Avatar from "@/app/components/avatar";
 import ConfirmModal from "./confirm-modal";
 
@@ -93,7 +94,11 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
                         <div className="flex flex-col items-center">
                           <div className="mb-2">
-                            <Avatar user={otherUser} />
+                            {data.isGroup ? (
+                              <AvatarGroup users={data.users} />
+                            ) : (
+                              <Avatar user={otherUser} />
+                            )}
                           </div>
 
                           <h3>{title}</h3>
@@ -120,7 +125,18 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 
                           <div className="w-full pb-5 pt-5 sm:px-0 sm:pt-0">
                             <dl className="space-y-8 px-4 sm:space-y-6 sm:px-6">
-                              {!data.isGroup && (
+                              {data.isGroup ? (
+                                <div>
+                                  <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">
+                                    Emails
+                                  </dt>
+                                  <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">
+                                    {data.users
+                                      .map((user) => user.email)
+                                      .join(", ")}
+                                  </dd>
+                                </div>
+                              ) : (
                                 <div>
                                   <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">
                                     Email

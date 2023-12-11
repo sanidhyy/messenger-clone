@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import type { User } from "@prisma/client";
 
 import Avatar from "@/app/components/avatar";
+import LoadingModal from "@/app/components/loading-modal";
 
 type UserBoxProps = {
   user: User;
@@ -43,6 +44,8 @@ const UserBox: React.FC<UserBoxProps> = ({ user }) => {
       }
     });
   }, [userConversationRef, handleClick]);
+
+  if (isLoading) return <LoadingModal />;
 
   return (
     <div

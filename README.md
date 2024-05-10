@@ -284,6 +284,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 
 Useful resources and dependencies that are used in Messenger Clone.
 
+- Thanks to CodeWithAntonio: https://codewithantonio.com/
 - [@headlessui/react](https://www.npmjs.com/package/@headlessui/react) - Version: ^1.7.17
 - [@next-auth/prisma-adapter](https://www.npmjs.com/package/@next-auth/prisma-adapter) - Version: ^1.0.7
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client) - Version: ^5.7.0

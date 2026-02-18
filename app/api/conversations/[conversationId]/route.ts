@@ -8,9 +8,12 @@ type IParams = {
   conversationId?: string;
 };
 
-export async function DELETE(req: Request, { params }: { params: IParams }) {
+export async function DELETE(
+  _req: Request,
+  { params }: { params: Promise<IParams> },
+) {
   try {
-    const { conversationId } = params;
+    const { conversationId } = await params;
     const currentUser = await getCurrentUser();
 
     if (!currentUser?.id)
@@ -42,14 +45,14 @@ export async function DELETE(req: Request, { params }: { params: IParams }) {
         pusherServer.trigger(
           user.email,
           "conversation:remove",
-          existingConversation
+          existingConversation,
         );
       }
     });
 
     return NextResponse.json(deletedConversation);
   } catch (error: unknown) {
-    console.log("ERROR_CONVERSATION_DELETE:", error);
+    console.error("ERROR_CONVERSATION_DELETE:", error);
     return new NextResponse("Internal Server Error.", { status: 500 });
   }
 }

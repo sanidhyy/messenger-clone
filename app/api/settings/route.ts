@@ -24,7 +24,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json(updatedUser);
   } catch (error: unknown) {
-    console.log("ERROR_SETTINGS:", error);
+    console.error("ERROR_SETTINGS:", error);
     return new NextResponse("Internal Server Error.", { status: 500 });
   }
 }

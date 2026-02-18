@@ -8,10 +8,13 @@ type IParams = {
   conversationId: string;
 };
 
-export async function POST(req: Request, { params }: { params: IParams }) {
+export async function POST(
+  req: Request,
+  { params }: { params: Promise<IParams> },
+) {
   try {
     const currentUser = await getCurrentUser();
-    const { conversationId } = params;
+    const { conversationId } = await params;
 
     if (!currentUser?.id || !currentUser?.email) {
       return new NextResponse("Unauthorized.", { status: 401 });
@@ -70,12 +73,12 @@ export async function POST(req: Request, { params }: { params: IParams }) {
     await pusherServer.trigger(
       conversationId!,
       "message:update",
-      updatedMessage
+      updatedMessage,
     );
 
     return NextResponse.json(updatedMessage);
   } catch (error: unknown) {
-    console.log("ERROR_MESSAGES_SEEN:", error);
+    console.error("ERROR_MESSAGES_SEEN:", error);
     return new NextResponse("Internal Server Error.", { status: 500 });
   }
 }

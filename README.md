@@ -274,7 +274,7 @@ NEXT_PUBLIC_PUSHER_APP_CLUSTER=xxx
 
 ## :wrench: Stats
 
-[![Stats for Messenger Clone](/.github/images/stats.svg "Stats for Messenger Clone")](https://pagespeed-insights-svg.glitch.me/?url=https://appmessenger.vercel.app/ "Stats for Messenger Clone")
+[![Stats for Messenger Clone](/.github/images/stats.svg "Stats for Messenger Clone")](https://pagespeed.web.dev/analysis?url=https://appmessenger.vercel.app/ "Stats for Messenger Clone")
 
 ## :raised_hands: Contribute
 

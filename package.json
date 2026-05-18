@@ -71,7 +71,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "lodash": "^4.17.23",
-    "next": "15.5.15",
+    "next": "15.5.18",
     "next-auth": "^4.24.11",
     "next-cloudinary": "^5.20.0",
     "pusher": "^5.2.0",

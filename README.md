@@ -9,7 +9,7 @@
 [![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/messenger-clone/commits/main "Maintenance")
 [![GitHub branches](https://flat.badgen.net/github/branches/sanidhyy/messenger-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/messenger-clone/branches "GitHub branches")
 [![Github commits](https://flat.badgen.net/github/commits/sanidhyy/messenger-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/messenger-clone/commits "Github commits")
-[![Vercel status](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://appmessenger.vercel.app/ "Vercel status")
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b3903802-9306-476c-a72b-79f4ef2bbbc0/deploy-status)](https://clone-messaging.netlify.app "Netlify Status")
 [![GitHub issues](https://flat.badgen.net/github/issues/sanidhyy/messenger-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/messenger-clone/issues "GitHub issues")
 [![GitHub pull requests](https://flat.badgen.net/github/prs/sanidhyy/messenger-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/messenger-clone/pulls "GitHub pull requests")
 
@@ -268,7 +268,7 @@ If you run into issues during installation or setup:
 
 ## :wrench: Stats
 
-[![Stats for Messenger Clone](/.github/images/stats.svg "Stats for Messenger Clone")](https://pagespeed.web.dev/analysis?url=https://appmessenger.vercel.app/ "Stats for Messenger Clone")
+[![Stats for Messenger Clone](/.github/images/stats.svg "Stats for Messenger Clone")](https://pagespeed.web.dev/analysis?url=https://clone-messaging.netlify.app "Stats for Messenger Clone")
 
 ## :raised_hands: Contribute
 

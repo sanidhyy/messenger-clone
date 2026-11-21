@@ -43,6 +43,8 @@
 
 Here is the folder structure of this app.
 
+<!--- FOLDER_STRUCTURE_START --->
+
 ```bash
 messenger-clone/
   |- app/
@@ -124,6 +126,8 @@ messenger-clone/
   |- tsconfig.json
 ```
 
+<!--- FOLDER_STRUCTURE_END --->
+
 <br />
 
 ## :toolbox: Getting Started
@@ -166,35 +170,29 @@ NEXT_PUBLIC_PUSHER_APP_CLUSTER=xxx
 ```
 
 5. **MongoDB URL**
-
    - Install and run MongoDB locally or use a cloud-based MongoDB service.
    - Replace the placeholder in `DATABASE_URL` with your actual MongoDB connection string.
 
 6. **NextAuth Configuration**
-
    - Set up NextAuth by following the official documentation: [NextAuth.js Documentation](https://next-auth.js.org/getting-started/introduction)
    - Set `NEXTAUTH_URL` to the base URL of your application.
    - Generate a random string for `NEXTAUTH_SECRET`.
 
 7. **GitHub Auth**
-
    - Create a GitHub OAuth App by following the guide: [Creating an OAuth App](https://docs.github.com/en/developers/apps/creating-an-oauth-app)
    - Set `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` with the obtained credentials.
 
 8. **Google Auth**
-
    - Create a project on the Google Cloud Console: [Google Cloud Console](https://console.cloud.google.com/)
    - Follow the steps to set up OAuth consent screen and credentials: [Create credentials](https://developers.google.com/identity/sign-in/web/sign-in)
    - Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` with the obtained credentials.
 
 9. **Cloudinary**
-
    - Sign up for a Cloudinary account: [Cloudinary Sign-up](https://cloudinary.com/users/register/free)
    - Retrieve your cloud name from the dashboard.
    - Set `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` and `NEXT_PUBLIC_CLOUDINARY_CLOUD_PRESET` with the obtained credentials.
 
 10. **Pusher**
-
     - Sign up for a Pusher account: [Pusher Sign-up](https://dashboard.pusher.com/accounts/sign_up)
     - Create a new app and obtain the app ID, app secret, app key, and cluster.
     - Set `PUSHER_APP_ID`, `PUSHER_APP_SECRET`, `NEXT_PUBLIC_PUSHER_APP_KEY`, and `NEXT_PUBLIC_PUSHER_APP_CLUSTER` with the obtained credentials.
@@ -206,51 +204,39 @@ NEXT_PUBLIC_PUSHER_APP_CLUSTER=xxx
 ### :books: Additional Resources
 
 - **Next.js Documentation:** Explore the power of Next.js for building your web applications.
-
   - [Next.js Documentation](https://nextjs.org/docs/)
 
 - **NextAuth.js Documentation:** Learn more about authentication in Next.js using NextAuth.js.
-
   - [NextAuth.js Documentation](https://next-auth.js.org/)
 
 - **Tailwind CSS Documentation:** Dive into the documentation for Tailwind CSS, a utility-first CSS framework used in the project.
-
   - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
 - **Pusher Documentation:** Explore Pusher for adding real-time functionality to your applications.
-
   - [Pusher Documentation](https://pusher.com/docs)
 
 - **React Icons Documentation:** Find and customize high-quality SVG icons for your React applications.
-
   - [React Icons Documentation](https://react-icons.github.io/react-icons/)
 
 - **React Select Documentation:** Get to know more about React Select, a flexible and customizable select component.
-
   - [React Select Documentation](https://react-select.com/home)
 
 - **React Hook Form Documentation:** Learn about React Hook Form for efficient form management in React.
-
   - [React Hook Form Documentation](https://react-hook-form.com/get-started)
 
 - **Next Cloudinary Documentation:** Understand how to integrate Cloudinary for image and video management.
-
   - [Next Cloudinary Documentation](https://cloudinary.com/documentation)
 
 - **Prisma Documentation:** Explore Prisma for database access in TypeScript and JavaScript.
-
   - [Prisma Documentation](https://www.prisma.io/docs/)
 
 - **Axios Documentation:** Find information on how to use Axios for making HTTP requests.
-
   - [Axios Documentation](https://axios-http.com/docs/intro)
 
 - **Zustand Documentation:** Learn about Zustand, a small and fast state management library.
-
   - [Zustand Documentation](https://zustand.surge.sh/)
 
 - **React Hot Toast Documentation:** Understand how to use React Hot Toast for toast notifications in React applications.
-
   - [React Hot Toast Documentation](https://react-hot-toast.com/)
 
 - **Headless UI Documentation:** Explore Headless UI, a set of completely unstyled UI components.
@@ -293,6 +279,9 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in Messenger Clone.
 
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
+
+<!--- DEPENDENCIES_START --->
+
 - [@headlessui/react](https://www.npmjs.com/package/@headlessui/react) - Version: ^1.7.17
 - [@next-auth/prisma-adapter](https://www.npmjs.com/package/@next-auth/prisma-adapter) - Version: ^1.0.7
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client) - Version: ^5.7.0
@@ -327,6 +316,7 @@ Useful resources and dependencies that are used in Messenger Clone.
 - [prisma](https://www.npmjs.com/package/prisma) - Version: ^5.7.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss) - Version: ^3.3.0
 - [typescript](https://www.npmjs.com/package/typescript) - Version: ^5
+<!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee
 

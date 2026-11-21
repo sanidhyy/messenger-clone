@@ -44,88 +44,42 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
-
 ```bash
 messenger-clone/
   |- app/
     |-- (site)/
-        |--- components/
-        |--- page.tsx
     |-- actions/
-        |--- get-conversation-by-id.ts
-        |--- get-conversation.ts
-        |--- get-current-user.ts
-        |--- get-messages.ts
-        |--- get-session.ts
-        |--- get-users.ts
     |-- api/
-        |--- auth/[...nextauth]
-        |--- conversations/[conversationId]
-        |--- messages/
-        |--- pusher/
-        |--- register/
-        |--- settings/
     |-- components/
-        |--- inputs/
-        |--- modals/
-        |--- sidebar/
-        |--- active-status.tsx
-        |--- avatar-group.tsx
-        |--- avatar.tsx
-        |--- button.tsx
-        |--- empty-state.tsx
-        |--- loading-modal.tsx
     |-- config/
-        |--- authOptions.tsx
-        |--- site.ts
     |-- context/
-        |--- auth-context.ts
-        |--- toaster-context.ts
     |-- conversations/
-        |--- [conversationId]/
-            |---- components/
-        |--- components/
-        |--- layout.tsx
-        |--- loading.tsx
-        |--- page.tsx
     |-- hooks/
-        |--- use-active-channel.tsx
-        |--- use-active-list.tsx
-        |--- use-conversation.tsx
-        |--- use-other-user.tsx
-        |--- use-routes.tsx
     |-- libs/
-        |--- prismadb.ts
-        |--- pusher.ts
     |-- types/
-        |--- index.ts
     |-- users/
-        |--- components/
-        |--- layout.tsx
-        |--- loading.tsx
-        |--- page.tsx
+    |-- apple-icon.png
     |-- favicon.ico
     |-- globals.css
+    |-- icon0.svg
+    |-- icon1.png
     |-- layout.tsx
   |- prisma/
     |-- schema.prisma
   |- public/
-    |-- images/
-        |--- logo.png
-        |--- placeholder.jpg
-  |- .env
   |- .env.example
+  |- .env/.env.local
   |- .eslintrc.json
   |- .gitignore
+  |- bun.lock
   |- middleware.ts
+  |- netlify.toml
   |- next.config.js
-  |- package-lock.json
   |- package.json
   |- postcss.config.js
   |- tailwind.config.ts
   |- tsconfig.json
 ```
-
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -281,41 +235,41 @@ Useful resources and dependencies that are used in Messenger Clone.
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
 
 <!--- DEPENDENCIES_START --->
+- [@headlessui/react](https://www.npmjs.com/package/@headlessui/react): ^1.7.19
+- [@next-auth/prisma-adapter](https://www.npmjs.com/package/@next-auth/prisma-adapter): ^1.0.7
+- [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^5.7.0
+- [@tailwindcss/forms](https://www.npmjs.com/package/@tailwindcss/forms): ^0.5.11
+- [@types/bcrypt](https://www.npmjs.com/package/@types/bcrypt): ^6.0.0
+- [@types/lodash](https://www.npmjs.com/package/@types/lodash): ^4.17.27
+- [@types/node](https://www.npmjs.com/package/@types/node): ^25.2.3
+- [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.14
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.3
+- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.6.2
+- [axios](https://www.npmjs.com/package/axios): ^1.13.5
+- [bcrypt](https://www.npmjs.com/package/bcrypt): ^6.0.0
+- [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
+- [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
+- [eslint](https://www.npmjs.com/package/eslint): ^8
+- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 14.0.3
+- [lodash](https://www.npmjs.com/package/lodash): ^4.18.1
+- [next](https://www.npmjs.com/package/next): 15.5.24
+- [next-auth](https://www.npmjs.com/package/next-auth): ^4.24.11
+- [next-cloudinary](https://www.npmjs.com/package/next-cloudinary): ^5.20.0
+- [postcss](https://www.npmjs.com/package/postcss): ^8
+- [prisma](https://www.npmjs.com/package/prisma): ^5.7.0
+- [pusher](https://www.npmjs.com/package/pusher): ^5.3.4
+- [pusher-js](https://www.npmjs.com/package/pusher-js): ^8.4.0-rc2
+- [react](https://www.npmjs.com/package/react): ^19.2.4
+- [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
+- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.71.1
+- [react-hot-toast](https://www.npmjs.com/package/react-hot-toast): ^2.6.0
+- [react-icons](https://www.npmjs.com/package/react-icons): ^5.7.0
+- [react-select](https://www.npmjs.com/package/react-select): ^5.10.2
+- [react-spinners](https://www.npmjs.com/package/react-spinners): ^0.17.0
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
+- [typescript](https://www.npmjs.com/package/typescript): ^5.9.3
+- [zustand](https://www.npmjs.com/package/zustand): ^5.0.11
 
-- [@headlessui/react](https://www.npmjs.com/package/@headlessui/react) - Version: ^1.7.17
-- [@next-auth/prisma-adapter](https://www.npmjs.com/package/@next-auth/prisma-adapter) - Version: ^1.0.7
-- [@prisma/client](https://www.npmjs.com/package/@prisma/client) - Version: ^5.7.0
-- [@tailwindcss/forms](https://www.npmjs.com/package/@tailwindcss/forms) - Version: ^0.5.7
-- [axios](https://www.npmjs.com/package/axios) - Version: ^1.6.2
-- [bcrypt](https://www.npmjs.com/package/bcrypt) - Version: ^5.1.1
-- [clsx](https://www.npmjs.com/package/clsx) - Version: ^2.0.0
-- [date-fns](https://www.npmjs.com/package/date-fns) - Version: ^2.30.0
-- [lodash](https://www.npmjs.com/package/lodash) - Version: ^4.17.21
-- [next](https://www.npmjs.com/package/next) - Version: 14.0.3
-- [next-auth](https://www.npmjs.com/package/next-auth) - Version: ^4.24.5
-- [next-cloudinary](https://www.npmjs.com/package/next-cloudinary) - Version: ^5.11.0
-- [pusher](https://www.npmjs.com/package/pusher) - Version: ^5.2.0
-- [pusher-js](https://www.npmjs.com/package/pusher-js) - Version: ^8.4.0-rc2
-- [react](https://www.npmjs.com/package/react) - Version: ^18
-- [react-dom](https://www.npmjs.com/package/react-dom) - Version: ^18
-- [react-hook-form](https://www.npmjs.com/package/react-hook-form) - Version: ^7.48.2
-- [react-hot-toast](https://www.npmjs.com/package/react-hot-toast) - Version: ^2.4.1
-- [react-icons](https://www.npmjs.com/package/react-icons) - Version: ^4.12.0
-- [react-select](https://www.npmjs.com/package/react-select) - Version: ^5.8.0
-- [react-spinners](https://www.npmjs.com/package/react-spinners) - Version: ^0.13.8
-- [zustand](https://www.npmjs.com/package/zustand) - Version: ^4.4.7
-- [@types/bcrypt](https://www.npmjs.com/package/@types/bcrypt) - Version: ^5.0.2
-- [@types/lodash](https://www.npmjs.com/package/@types/lodash) - Version: ^4.14.202
-- [@types/node](https://www.npmjs.com/package/@types/node) - Version: ^20
-- [@types/react](https://www.npmjs.com/package/@types/react) - Version: ^18
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom) - Version: ^18
-- [autoprefixer](https://www.npmjs.com/package/autoprefixer) - Version: ^10.0.1
-- [eslint](https://www.npmjs.com/package/eslint) - Version: ^8
-- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next) - Version: 14.0.3
-- [postcss](https://www.npmjs.com/package/postcss) - Version: ^8
-- [prisma](https://www.npmjs.com/package/prisma) - Version: ^5.7.0
-- [tailwindcss](https://www.npmjs.com/package/tailwindcss) - Version: ^3.3.0
-- [typescript](https://www.npmjs.com/package/typescript) - Version: ^5
 <!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee

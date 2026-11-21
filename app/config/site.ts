@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const siteConfig: Metadata = {
-  title: "Messenger Clone",
-  description: "A Real-Time Messenger Clone using Next.js 14.",
+  title: "Messaging App",
+  description: "A Real-Time Messaging App using Next.js 14.",
   keywords: [
     "reactjs",
     "nextjs",
